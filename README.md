@@ -1,32 +1,22 @@
-<h1> Ufarms </h1>
-<h2> TOC </h2>
-<ul>
-    <li> app/ -- flask package files</li>
-    <li> run.py -- init file for flask</li>
-    <li> Local Reproduction Steps </li>
-    <li> Additional info below </li>
-    <li> <a href="#"> Demo Video - coming soon </a> </li>
+<h1> Ufarms Client </h1>
 
-<h2> Setting up a Local Flask Environment  </h2>
+<h2>Set up</h2>
+<ol> 
+    <li>You need Node.js and npm (included with Node).</li>
+    <li>`git clone` this repo.</li>
+    <li>Change directory to the repo.</li>
+    <li>Run `npm install`.</li>
+    <li>Run `npm run dev`.</li>
+    <li>Observe changes on http://localhost:3000 .</li>
+</ol>
 
-<ul> 
-<li>run `python venv venv` in root directory </li>
-<li>`source venv/bin/activate` </li>
-<li>Git clone this repo </li>
-<li>Change directory to the repo </li>
-<li>`pip install -r requirements.txt` </li>
-<li>Copy paste `.flaskenv` file from the note (You do have the note don't you?) </li>
-<li>See that the .crt file exists in your local the path defined in __init__.py(maybe differ for windows and apple users) </li>
-<li> `flask run` in Ufarms directory </li>
-<li>Observe requests to the server on localhost:5000 in this terminal </li>
-</ul>
-
-<h2> Set up the Front End </h2>
-<li> requires npm & Node.js and if want, Yarn to be installed </li>
-<li> open a second terminal </li>
-<li> `cd client` then `npm install` or update all dependencies with yarn</li>
-<li> `npm run dev` or `yarn start` </li>
-<li> Observe changes to your code in real time on http://localhost:3000 </li>
+<h2>When Ready to Deploy</h2>
+<ol>
+    <li>Run `npm run build`, which updates /dist directory with compiled changes.</li>
+    <li>`git commit` current updates</li>
+    <li>Run `git subtree push --prefix dist <remote-name> gh-pages` to push the /dist directory to the gh-pages branch.</li>
+    <li>Check it out at https://markehler.github.io/UfarmsClient/ .</li>
+</ol>
 
 <h2> The Verdant Vision </h2>
 <br>
