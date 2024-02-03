@@ -4,8 +4,8 @@
 <ol> 
     <li>You need Node.js and npm (included with Node).</li>
     <li>`git clone` this repo.</li>
-    <li>Change directory to the repo.</li>
-    <li>Run `npm install`.</li>
+    <li>Change directory to the repo, ensuring package.json is in the root of the project.</li>
+    <li>Run `npm install` to install the necessary dependencies.</li>
     <li>Run `npm run dev`.</li>
     <li>Observe changes on http://localhost:3000 .</li>
 </ol>
@@ -13,7 +13,7 @@
 <h2>When Ready to Deploy</h2>
 <ol>
     <li>Run `npm run build`, which updates /dist directory with compiled changes.</li>
-    <li>`git commit` current updates</li>
+    <li>`git commit` and `git push` current updates</li>
     <li>Run `git subtree push --prefix dist <remote-name> gh-pages` to push the /dist directory to the gh-pages branch.</li>
     <li>Check it out at https://markehler.github.io/UfarmsClient/ .</li>
 </ol>
