@@ -1,7 +1,13 @@
 import { useState } from "react";
 
 export default function LandingForm() {
+  const [zipCode, setZipCode] = useState(null);
+  const [email, setEmail] = useState(null);
   const [preferredProduce, setPreferredProduce] = useState([]);
+
+  const bundledData = () => {
+    return { zipCode, email, preferredProduce };
+  };
 
   function handleProduceArray(e) {
     if (!e.target.checked) {
@@ -13,21 +19,24 @@ export default function LandingForm() {
     }
   }
 
-  const bundledData = () => {
-    return { zipCode, email, preferredProduce };
-  };
-
   function submitForm(e) {
     e.preventDefault();
 
-    // make 'POST' request with bundledData() as the payload
+    // make 'POST' request to server with bundledData() as the payload
   }
 
   return (
     <form className="flex flex-col gap-5 items-start">
       <div className="flex justify-between w-full">
         <label htmlFor="zipcode">Zip Code: </label>
-        <input type="text" name="zipcode" id="zipcode" placeholder="123456" />
+        <input
+          type="text"
+          name="zipcode"
+          id="zipcode"
+          value={zipCode}
+          placeholder="12345"
+          onChange={(e) => setZipCode(e.target.value)}
+        />
       </div>
       <div className="flex justify-between w-full">
         <label htmlFor="email">Email: </label>
@@ -35,7 +44,9 @@ export default function LandingForm() {
           type="email"
           name="email"
           id="email"
+          value={email}
           placeholder="example@farm.com"
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
