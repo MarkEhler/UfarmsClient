@@ -1,5 +1,6 @@
 import "./styles.css";
 import LandingForm from "./components/LandingForm";
+import AnimatedText from "./components/AnimatedText";
 
 export default function App() {
   return (
@@ -7,7 +8,8 @@ export default function App() {
       <h1 className="text-6xl mb-24">Ufarms</h1>
       <h2 className="text-4xl mb-6">
         Grow Your Own
-        <br />[ ]
+        <br />
+        <AnimatedText />
       </h2>
       <h3 className="text-xl mb-24 mt-24">
         Rent backyard farm plots in your Denver neighborhood

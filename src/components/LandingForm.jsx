@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export default function LandingForm() {
-  const [zipCode, setZipCode] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [zipCode, setZipCode] = useState("");
+  const [email, setEmail] = useState("");
   const [wantedProduce, setWantedProduce] = useState([]);
 
   const bundledData = { zipCode, email, wantedProduce };
