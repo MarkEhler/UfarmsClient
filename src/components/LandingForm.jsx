@@ -3,26 +3,46 @@ import { useState } from "react";
 export default function LandingForm() {
   const [zipCode, setZipCode] = useState(null);
   const [email, setEmail] = useState(null);
-  const [preferredProduce, setPreferredProduce] = useState([]);
+  const [wantedProduce, setWantedProduce] = useState([]);
 
-  const bundledData = () => {
-    return { zipCode, email, preferredProduce };
-  };
+  const bundledData = { zipCode, email, wantedProduce };
 
-  function handleProduceArray(e) {
-    if (!e.target.checked) {
-      setPreferredProduce((prevProduce) =>
-        prevProduce.filter((item) => item !== e.target.value)
+  /**
+   * Adds and removes items in an array based on the checkboxes they tick and untick
+   *
+   * @param {Object} target the checkbox the user clicks
+   */
+  function handleProduceArray(target) {
+    if (!target.checked) {
+      setWantedProduce((prevProduce) =>
+        prevProduce.filter((item) => item !== target.value)
       );
     } else {
-      setPreferredProduce((prevProduce) => [...prevProduce, e.target.value]);
+      setWantedProduce((prevProduce) => [...prevProduce, target.value]);
     }
   }
 
+  /**
+   * Sends POST request to Ufarms server containing form data
+   *
+   * @param {Object} e The event object, accessed in order to prevent default action
+   */
   function submitForm(e) {
     e.preventDefault();
 
-    // make 'POST' request to server with bundledData() as the payload
+    console.log(bundledData);
+
+    // make 'POST' request to server with bundledData() as the payload:
+
+    // axios({
+    //   url: "/whatever",
+    //   method: "post",
+    //   data: bundledData,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "application/json",
+    //   },
+    // });
   }
 
   return (
@@ -57,7 +77,7 @@ export default function LandingForm() {
           name="rootVgetables"
           id="rootVgetables"
           value="root vegetables"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Root Vegetables
       </label>
@@ -67,7 +87,7 @@ export default function LandingForm() {
           name="leafyGreens"
           id="leafyGreens"
           value="leafy greens"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Leafy Greens
       </label>
@@ -77,7 +97,7 @@ export default function LandingForm() {
           name="otherVegetables"
           id="otherVegetables"
           value="other vegetables"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Other Vegetables
       </label>
@@ -87,7 +107,7 @@ export default function LandingForm() {
           name="berries"
           id="berries"
           value="berries"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Berries
       </label>
@@ -97,7 +117,7 @@ export default function LandingForm() {
           name="fruitTrees"
           id="fruitTrees"
           value="fruit trees"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Fruit Trees
       </label>
@@ -107,7 +127,7 @@ export default function LandingForm() {
           name="otherFruits"
           id="otherFruits"
           value="other fruits"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Other Fruits
       </label>
@@ -117,7 +137,7 @@ export default function LandingForm() {
           name="legumes"
           id="legumes"
           value="legumes"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Legumes
       </label>
@@ -127,7 +147,7 @@ export default function LandingForm() {
           name="flowers"
           id="flowers"
           value="flowers"
-          onClick={(e) => handleProduceArray(e)}
+          onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Flowers
       </label>
