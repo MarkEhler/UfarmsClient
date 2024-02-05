@@ -23,5 +23,5 @@ export default function AnimatedText() {
     setThingToDisplay(thingsToGrow[index]);
   }, 2000);
 
-  return <h2>{thingToDisplay}</h2>;
+  return <>{thingToDisplay}</>;
 }
