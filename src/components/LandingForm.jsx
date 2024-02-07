@@ -4,8 +4,15 @@ export default function LandingForm() {
   const [zipCode, setZipCode] = useState("");
   const [email, setEmail] = useState("");
   const [wantedProduce, setWantedProduce] = useState([]);
+  const [otherExplanation, setOtherExplanation] = useState("");
 
-  const bundledData = { zipCode, email, wantedProduce };
+  const bundledData = {
+    zipCode,
+    email,
+    wantedProduce,
+    otherExplanation,
+    date: Date.now(),
+  };
 
   /**
    * Adds and removes items in an array based on the checkboxes they tick and untick
@@ -46,7 +53,7 @@ export default function LandingForm() {
   }
 
   return (
-    <form className="flex flex-col gap-5 items-start">
+    <form className="flex flex-col items-start">
       <div className="flex justify-between w-full">
         <label htmlFor="zipcode">Zip Code: </label>
         <input
@@ -70,86 +77,80 @@ export default function LandingForm() {
         />
       </div>
 
-      <h4 className="text-xl mt-6">Types of Produce You Want to Have/Grow:</h4>
-      <label htmlFor="rootVgetables" className="ml-4 cursor-pointer">
-        <input
-          type="checkbox"
-          name="rootVgetables"
-          id="rootVgetables"
-          value="root vegetables"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
-        Root Vegetables
-      </label>
-      <label htmlFor="leafyGreens" className="ml-4 cursor-pointer">
-        <input
-          type="checkbox"
-          name="leafyGreens"
-          id="leafyGreens"
-          value="leafy greens"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
-        Leafy Greens
-      </label>
-      <label htmlFor="otherVegetables" className="ml-4 cursor-pointer">
-        <input
-          type="checkbox"
-          name="otherVegetables"
-          id="otherVegetables"
-          value="other vegetables"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
-        Other Vegetables
-      </label>
+      <h4 className="text-xl mt-6">I want to grow:</h4>
+      <h4 className="mb-2">(Select all that apply)</h4>
+
       <label htmlFor="berries" className="ml-4 cursor-pointer">
         <input
           type="checkbox"
           name="berries"
           id="berries"
-          value="berries"
+          value="Berries"
           onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Berries
       </label>
-      <label htmlFor="fruitTrees" className="ml-4 cursor-pointer">
+      <label htmlFor="greens" className="ml-4 cursor-pointer">
         <input
           type="checkbox"
-          name="fruitTrees"
-          id="fruitTrees"
-          value="fruit trees"
+          name="greens"
+          id="greens"
+          value="Greens"
           onClick={(e) => handleProduceArray(e.target)}
         />{" "}
-        Fruit Trees
+        Greens
       </label>
-      <label htmlFor="otherFruits" className="ml-4 cursor-pointer">
+      <label htmlFor="herbs" className="ml-4 cursor-pointer">
         <input
           type="checkbox"
-          name="otherFruits"
-          id="otherFruits"
-          value="other fruits"
+          name="herbs"
+          id="herbs"
+          value="Herbs"
           onClick={(e) => handleProduceArray(e.target)}
         />{" "}
-        Other Fruits
-      </label>
-      <label htmlFor="legumes" className="ml-4 cursor-pointer">
-        <input
-          type="checkbox"
-          name="legumes"
-          id="legumes"
-          value="legumes"
-          onClick={(e) => handleProduceArray(e.target)}
-        />{" "}
-        Legumes
+        Herbs
       </label>
       <label htmlFor="flowers" className="ml-4 cursor-pointer">
         <input
           type="checkbox"
           name="flowers"
           id="flowers"
-          value="flowers"
+          value="Flowers"
           onClick={(e) => handleProduceArray(e.target)}
         />{" "}
         Flowers
+      </label>
+      <label htmlFor="vegetables" className="ml-4 cursor-pointer">
+        <input
+          type="checkbox"
+          name="vegetables"
+          id="vegetables"
+          value="Vegetables"
+          onClick={(e) => handleProduceArray(e.target)}
+        />{" "}
+        Vegetables
+      </label>
+      <label htmlFor="other" className="ml-4 cursor-pointer">
+        <input
+          type="checkbox"
+          name="other"
+          id="other"
+          value="Other"
+          onClick={(e) => handleProduceArray(e.target)}
+        />{" "}
+        Other
+      </label>
+
+      <label htmlFor="other" className="flex flex-col mt-2">
+        Other? What do you mean?
+        <textarea
+          name="other"
+          id="other"
+          placeholder="I want to grow..."
+          value={otherExplanation}
+          onChange={(e) => setOtherExplanation(e.target.value)}
+          className="px-2"
+        ></textarea>
       </label>
 
       <button
