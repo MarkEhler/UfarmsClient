@@ -1,17 +1,17 @@
 import { useState } from "react";
+import axios from "axios";
 
 export default function LandingForm() {
-  const [zipCode, setZipCode] = useState("");
+  const [zipcode, setZipcode] = useState("");
   const [email, setEmail] = useState("");
-  const [wantedProduce, setWantedProduce] = useState([]);
+  const [produceType, setProduceType] = useState([]);
   const [otherExplanation, setOtherExplanation] = useState("");
 
   const bundledData = {
-    zipCode,
+    zipcode,
     email,
-    wantedProduce,
-    otherExplanation,
-    date: Date.now(),
+    produceType,
+    // otherExplanation,
   };
 
   /**
@@ -21,11 +21,11 @@ export default function LandingForm() {
    */
   function handleProduceArray(target) {
     if (!target.checked) {
-      setWantedProduce((prevProduce) =>
+      setProduceType((prevProduce) =>
         prevProduce.filter((item) => item !== target.value)
       );
     } else {
-      setWantedProduce((prevProduce) => [...prevProduce, target.value]);
+      setProduceType((prevProduce) => [...prevProduce, target.value]);
     }
   }
 
@@ -34,22 +34,23 @@ export default function LandingForm() {
    *
    * @param {Object} e The event object, accessed in order to prevent default action
    */
-  function submitForm(e) {
+  async function submitForm(e) {
     e.preventDefault();
 
     console.log(bundledData);
 
     // make 'POST' request to server with bundledData() as the payload:
+    //
 
-    // axios({
-    //   url: "/whatever",
-    //   method: "post",
-    //   data: bundledData,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "application/json",
-    //   },
-    // });
+    await axios({
+      url: "https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form",
+      method: "post",
+      data: bundledData,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
   }
 
   return (
@@ -60,9 +61,9 @@ export default function LandingForm() {
           type="text"
           name="zipcode"
           id="zipcode"
-          value={zipCode}
+          value={zipcode}
           placeholder="12345"
-          onChange={(e) => setZipCode(e.target.value)}
+          onChange={(e) => setZipcode(e.target.value)}
         />
       </div>
       <div className="flex justify-between w-full">

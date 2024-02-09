@@ -8,6 +8,7 @@
     <li>Run `npm install` to install the necessary dependencies.</li>
     <li>Run `npm run dev`.</li>
     <li>Observe changes on http://localhost:3000 .</li>
+    <li>To style with Tailwind, run `npx tailwind -i ./src/index.css -o ./src/styles.css --watch`</li>
 </ol>
 
 <h2>When Ready to Deploy</h2>
