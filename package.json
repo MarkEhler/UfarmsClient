@@ -10,11 +10,11 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
-    "postinstall": "vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "style": "npx tailwindcss -i ./src/index.css -o ./src/styles.css --watch",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "vite build"
   },
   "dependencies": {
     "axios": "^1.6.7",
