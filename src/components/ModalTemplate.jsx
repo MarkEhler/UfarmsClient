@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 export default function ModalTemplate({ modalOpen, closeModal, children }) {
   const ref = useRef();
@@ -8,10 +9,20 @@ export default function ModalTemplate({ modalOpen, closeModal, children }) {
     return ref.current?.close();
   }, [modalOpen]);
 
-  return (
-    <dialog ref={ref} onCancel={closeModal}>
+  return createPortal(
+    <dialog
+      className="w-auto h-fit p-5 rounded-xl max-w-screen-sm"
+      ref={ref}
+      onCancel={closeModal}
+    >
       {children}
-      <button onClick={closeModal}>Close</button>
-    </dialog>
+      <button
+        className="bg-white text-black px-6 py-4 rounded-xl"
+        onClick={closeModal}
+      >
+        Close
+      </button>
+    </dialog>,
+    document.body
   );
 }
