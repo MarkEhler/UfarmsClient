@@ -11,13 +11,15 @@
     <li>To style with Tailwind, run `npx tailwind -i ./src/index.css -o ./src/styles.css --watch`</li>
 </ol>
 
-<h2>When Ready to Deploy</h2>
-<ol>
+<!-- <h2>When Ready to Deploy</h2> -->
+<!-- <ol>
+
     <li>Run `npm run build`, which updates /dist directory with compiled changes.</li>
     <li>`git commit` and `git push` current updates</li>
     <li>Run `git subtree push --prefix dist <remote-name> gh-pages` to push the /dist directory to the gh-pages branch.</li>
     <li>Check it out at https://markehler.github.io/UfarmsClient/ .</li>
-</ol>
+
+</ol> -->
 
 <h2> The Verdant Vision </h2>
 <br>

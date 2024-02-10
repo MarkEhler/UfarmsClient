@@ -5,7 +5,7 @@ export default function LandingForm() {
   const [zipcode, setZipcode] = useState("");
   const [email, setEmail] = useState("");
   const [produceType, setProduceType] = useState([]);
-  const [otherExplanation, setOtherExplanation] = useState("");
+  // const [otherExplanation, setOtherExplanation] = useState("");
 
   const bundledData = {
     zipcode,
@@ -37,11 +37,7 @@ export default function LandingForm() {
   async function submitForm(e) {
     e.preventDefault();
 
-    console.log(bundledData);
-
-    // make 'POST' request to server with bundledData() as the payload:
-    //
-
+    // make 'POST' request to server with bundledData() as the payload
     await axios({
       url: "https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form",
       method: "post",
@@ -142,7 +138,7 @@ export default function LandingForm() {
         Other
       </label>
 
-      <label htmlFor="other" className="flex flex-col mt-2">
+      {/* <label htmlFor="other" className="flex flex-col mt-2">
         Other? What do you mean?
         <textarea
           name="other"
@@ -152,7 +148,7 @@ export default function LandingForm() {
           onChange={(e) => setOtherExplanation(e.target.value)}
           className="px-2"
         ></textarea>
-      </label>
+      </label> */}
 
       <button
         type="submit"
