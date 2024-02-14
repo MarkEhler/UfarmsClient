@@ -1,53 +1,8 @@
-import { useState } from "react";
-import axios from "axios";
+import useLandingForm from "../hooks/useLandingForm";
 
 export default function LandingForm() {
-  const [zipcode, setZipcode] = useState("");
-  const [email, setEmail] = useState("");
-  const [produceType, setProduceType] = useState([]);
-  // const [otherExplanation, setOtherExplanation] = useState("");
-
-  const bundledData = {
-    zipcode,
-    email,
-    produceType,
-    // otherExplanation,
-  };
-
-  /**
-   * Adds and removes items in an array based on the checkboxes they tick and untick
-   *
-   * @param {Object} target the checkbox the user clicks
-   */
-  function handleProduceArray(target) {
-    if (!target.checked) {
-      setProduceType((prevProduce) =>
-        prevProduce.filter((item) => item !== target.value)
-      );
-    } else {
-      setProduceType((prevProduce) => [...prevProduce, target.value]);
-    }
-  }
-
-  /**
-   * Sends POST request to Ufarms server containing form data
-   *
-   * @param {Object} e The event object, accessed in order to prevent default action
-   */
-  async function submitForm(e) {
-    e.preventDefault();
-
-    // make 'POST' request to server with bundledData() as the payload
-    await axios({
-      url: "https://ufarms-backend-458b111e2b29.herokuapp.com/api/submit_form",
-      method: "post",
-      data: bundledData,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
-  }
+  const [state, setState, handleProduceArray, submitForm] = useLandingForm();
+  const { setZipcode, setEmail } = setState;
 
   return (
     <form className="flex flex-col items-start">
@@ -57,9 +12,9 @@ export default function LandingForm() {
           type="text"
           name="zipcode"
           id="zipcode"
-          value={zipcode}
+          value={state.zipcode}
           placeholder="12345"
-          onChange={(e) => setZipcode(e.target.value)}
+          onChange={(e) => setState(setZipcode, e.target.value)}
         />
       </div>
       <div className="flex justify-between w-full">
@@ -68,9 +23,9 @@ export default function LandingForm() {
           type="email"
           name="email"
           id="email"
-          value={email}
+          value={state.email}
           placeholder="example@farm.com"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setState(setEmail, e.target.value)}
         />
       </div>
 
@@ -144,7 +99,7 @@ export default function LandingForm() {
           name="other"
           id="other"
           placeholder="I want to grow..."
-          value={otherExplanation}
+          value={state.otherExplanation}
           onChange={(e) => setOtherExplanation(e.target.value)}
           className="px-2"
         ></textarea>

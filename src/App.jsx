@@ -13,6 +13,7 @@ export default function App() {
   return (
     <div className="text-slate-50 font-bold mx-auto">
       <h1 className="text-6xl mb-24">Ufarms</h1>
+
       <h2 className="text-4xl mb-6">
         Grow Your Own
         <br />
@@ -25,7 +26,6 @@ export default function App() {
       <LandingForm />
 
       <h2 className="text-4xl mt-6 mb-6">Info:</h2>
-
       <div className="flex justify-center gap-10 text-xl">
         <button
           className="bg-white text-black px-6 py-4 rounded-xl"
@@ -39,21 +39,22 @@ export default function App() {
         >
           For Yard Hosts
         </button>
-
-        <ModalTemplate
-          modalIsOpen={farmersModalOpen}
-          closeModal={() => setFarmersModalOpen(false)}
-        >
-          <FarmersLandingInfo quizUrl="#" />
-        </ModalTemplate>
-
-        <ModalTemplate
-          modalIsOpen={hostsModalOpen}
-          closeModal={() => setHostsModalOpen(false)}
-        >
-          <HostsLandingInfo quizUrl="#" />
-        </ModalTemplate>
       </div>
+
+      {/* Modals */}
+      <ModalTemplate
+        modalIsOpen={farmersModalOpen}
+        closeModal={() => setFarmersModalOpen(false)}
+      >
+        <FarmersLandingInfo quizUrl="#" />
+      </ModalTemplate>
+
+      <ModalTemplate
+        modalIsOpen={hostsModalOpen}
+        closeModal={() => setHostsModalOpen(false)}
+      >
+        <HostsLandingInfo quizUrl="#" />
+      </ModalTemplate>
     </div>
   );
 }
