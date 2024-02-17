@@ -65,7 +65,11 @@
 <h2> Get in Touch </h2>
 <p><b>Join the Beta Group</b></p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMcVM9-m9wIySnytV_PTfDHVxrya5ecNSrDL7TunFNzehZYw/viewform?embedded=true"> Mailing List </a> 
+    <br>
     <a class="btn btn-default" href="https://www.linkedin.com/in/mark-ehler-85052548/"> Linkedin</a>
+    <br>
     <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
+    <br>
+    <a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a>
+    <br>
     <a> <span class="hidden"> m.ehler@comcast.net </span></a>
-    <a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a> 
