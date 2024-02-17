@@ -27,7 +27,9 @@
 <br>
 <i>It's the AirBnB of community gardens</i>
 <br>
+<br>
     <p>Supermarkets, kitchens, grain mills, barns, what do all these places have in common?  We gather(ed) in them and we go to them to get the food.  Over time, these meeting places have been cut off or replaced by unsustainable food supply networks.  If you've felt like community gardens are too restrictive and Community Supported Agriculture doesn't allow for the involvment you'd like then you too believe there is a place for Ufarms, micro community gardens hosted on residential Ufreeholders and tended by renting Ufarmers.</p>
+<br>
 <br>
 <h2> Address Food Waste </h2>
 <br>
@@ -49,22 +51,21 @@
 <br>
 
 <h2> How it's Intended to Grow </h2>
-    <br>
+<br>
+<br>
     <body> At it's core, this project is meant to do two things. First organise a club of Ufolks, Ufarmers, and Ufreeholders.  Second, give them the means to connect and self organize.  <b>First a map, so we can find the way back.</b>
     <a href="https://imgur.com/aNEB4nB"><img src="https://i.imgur.com/aNEB4nB.jpg" title="legacymap" style="border: 2px solid #000;">
     </a>
-
+<br>
+<br>
 <h3> Call to Action </h3>
     <br>
     <p>Contributing to a healthier food system doesn't need to be hard, it can acutally be kinda fun.  Now accepting users for the pilot group spring 2024</p>
     <br>
 <h2> Get in Touch </h2>
 <p><b>Join the Beta Group</b></p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMcVM9-m9wIySnytV_PTfDHVxrya5ecNSrDL7TunFNzehZYw/viewform?embedded=true"> Mailing List </a> 
-    <div class="btn-group open">
-        <a class="btn btn-default" href="https://www.linkedin.com/in/mark-ehler-85052548/"> Linkedin</a>
-        <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
-        <a> <span class="hidden"> m.ehler@comcast.net </span></a>
-    </div>
-
-<a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a> 
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMcVM9-m9wIySnytV_PTfDHVxrya5ecNSrDL7TunFNzehZYw/viewform?embedded=true"> Mailing List </a> 
+    <a class="btn btn-default" href="https://www.linkedin.com/in/mark-ehler-85052548/"> Linkedin</a>
+    <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
+    <a> <span class="hidden"> m.ehler@comcast.net </span></a>
+    <a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a> 
