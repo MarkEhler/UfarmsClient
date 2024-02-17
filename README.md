@@ -1,24 +1,25 @@
 <h1> Ufarms Client </h1>
 
 <h2>Developers</h2>
-<ol> 
-    <li>Assumption -- Node.js and NPM installed.</li>
-    <li>`git clone` this repo.</li>
-    <li>Change directory to the repo, ensuring package.json is in the root of the project.</li>
-    <li>`git checkout -b (name-yourbranch) origin/main`</li>
-    <li>Run `npm install` to install the necessary dependencies.</li>
-    <li>Run `npm run dev`.</li>
-    <li>Observe changes on http://localhost:3000 .</li>
-    <li>To style with Tailwind, run `npx tailwind -i ./src/index.css -o ./src/styles.css --watch`</li>
+<ol>
+
+    Assumption -- Node.js and NPM installed.
+    `git clone` this repo.
+    Change directory to the repo, ensuring package.json is in the root of the project.
+    `git checkout -b (name-yourbranch) origin/main`
+    Run `npm install` to install the necessary dependencies.
+    Run `npm run dev`.
+    Observe changes on http://localhost:3000 .
+    To style with Tailwind, run `npx tailwind -i ./src/index.css -o ./src/styles.css --watch`
 </ol>
 
 <h2>When Ready to Deploy</h2>
 <ol>
 
-    <li>Run `npm run build`, which updates /dist directory with compiled changes.</li>
-    <li>`git commit` and `git push` current updates</li>
-    <li>Create a pull request to main and set Mark as the approver</li>
-    <li>Recieve an email once the request has been approved and see changes on https://beta.ufarms.co</li>
+    Run `npm run build`, which updates /dist directory with compiled changes.
+    `git commit` and `git push` current updates
+    Create a pull request to main and set Mark as the approver
+    Recieve an email once the request has been approved and see changes on https://beta.ufarms.co
 
 </ol>
 
@@ -65,5 +66,5 @@
         <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
         <a> <span class="hidden"> m.ehler@comcast.net </span></a>
     </div>
-    
+
 <a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a> 

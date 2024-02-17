@@ -9,19 +9,23 @@ export default function AnimatedText() {
     "Beans",
     "Spinach",
     "Blueberries",
+    "Flowers",
+    "Corn",
   ];
 
-  const [thingToDisplay, setThingToDisplay] = useState(thingsToGrow[0]);
+  const [displayText, setDisplayText] = useState(thingsToGrow[0]);
   const [index, setIndex] = useState(0);
 
-  setTimeout(() => {
-    setIndex((prevIndex) => {
-      if (prevIndex >= 6) return 0;
-      return prevIndex + 1;
-    });
+  useEffect(() => {
+    setTimeout(() => {
+      setIndex((prevIndex) => {
+        if (prevIndex >= thingsToGrow.length) return 0;
+        return prevIndex + 1;
+      });
 
-    setThingToDisplay(thingsToGrow[index]);
-  }, 2000);
+      setDisplayText(thingsToGrow[index]);
+    }, 3000);
+  }, [displayText]);
 
-  return <>{thingToDisplay}</>;
+  return <>{displayText}</>;
 }
