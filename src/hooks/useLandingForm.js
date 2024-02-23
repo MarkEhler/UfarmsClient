@@ -15,21 +15,24 @@ export default function useLandingForm() {
   };
 
   /**
-   * Takes a state setter (ie, setEmail), and the value the state should be updated to, thereby consolidating form state management to avoid returning many multiple functions by the useLandingForm hook.
+   * Takes a state setter (ie, setEmail), and the value the state should be updated to,
+   * consolidating form state management to one place in useLandingForm hook
    *
-   * @param {Function} setter      the setX function used to alter the corresponding state object
-   * @param {Object}   eventTarget the event target the state is being updated to reflect
+   * @param {Function} setter      the set function used to alter the corresponding state object
+   * @param {Object}   eventTarget the DOM event target the state is being updated to
    */
   function setState(setter, eventTarget) {
     setter(eventTarget);
   }
-  // These are also added to avoid a messy return array length, for scalability
+  /* These are also added to avoid a long return array length. 
+  Just return setState as an object and access these functions as properties, 
+  which we can pass as first arguments TO setState in LandingForm.jsx */
   setState.setZipcode = setZipcode;
   setState.setEmail = setEmail;
   // setState.setOtherExplanation = setOtherExplanation;
 
   /**
-   * Adds and removes items in an array based on the checkboxes they tick and untick
+   * Adds and removes items in an array based on the checkboxes the user checks and unchecks
    *
    * @param {Object} target the checkbox the user clicks
    */
@@ -47,7 +50,7 @@ export default function useLandingForm() {
   /**
    * Sends POST request to Ufarms server containing form data
    *
-   * @param {Object} e The event object, accessed in order to prevent default action
+   * @param {Object} e The event object from the submit button, used to prevent default action
    */
   async function submitForm(e) {
     e.preventDefault();
