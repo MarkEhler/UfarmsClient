@@ -1,31 +1,42 @@
 <h1> Ufarms Client </h1>
 
-<h2>Set up</h2>
-<ol> 
-    <li>You need Node.js and npm (included with Node).</li>
+<h2>Developers</h2>
+<ol>
+
+    Assumption -- Node.js and NPM installed.
     <li>`git clone` this repo.</li>
     <li>Change directory to the repo, ensuring package.json is in the root of the project.</li>
+    <li>`git checkout -b (name-yourbranch) origin/main`</li>
     <li>Run `npm install` to install the necessary dependencies.</li>
     <li>Run `npm run dev`.</li>
     <li>Observe changes on http://localhost:3000 .</li>
     <li>To style with Tailwind, run `npx tailwind -i ./src/index.css -o ./src/styles.css --watch`</li>
+
 </ol>
 
-<!-- <h2>When Ready to Deploy</h2> -->
-<!-- <ol>
+<h2>When Ready to Deploy</h2>
+<ol>
 
-    <li>Run `npm run build`, which updates /dist directory with compiled changes.</li>
-    <li>`git commit` and `git push` current updates</li>
-    <li>Run `git subtree push --prefix dist <remote-name> gh-pages` to push the /dist directory to the gh-pages branch.</li>
-    <li>Check it out at https://markehler.github.io/UfarmsClient/ .</li>
+    Run `npm run build`, which updates /dist directory with compiled changes.
+    `git commit` and `git push` current updates
+    Create a pull request to main and set Mark as the approver
+    Recieve an email once the request has been approved and see changes on https://beta.ufarms.co
 
-</ol> -->
+</ol>
 
 <h2> The Verdant Vision </h2>
 <br>
+<i>It's the AirBnB of community gardens</i>
+<br>
+<br>
+    <p>Supermarkets, kitchens, grain mills, barns, what do all these places have in common?  We gather(ed) in them and we go to them to get the food.  Over time, these meeting places have been cut off or replaced by unsustainable food supply networks.  If you've felt like community gardens are too restrictive and Community Supported Agriculture doesn't allow for the involvment you'd like then you too believe there is a place for Ufarms, micro community gardens hosted on residential Ufreeholders and tended by renting Ufarmers.</p>
+<br>
+<br>
+<h2> Address Food Waste </h2>
+<br>
 <br>
     <p>
-    The goal of this project is to create a community for people to connect around local agriculture projects.  Supermarkets, kitchens, grain mills, barns, what do all these places have in common?  We gather(ed) in them and we go to them to get the food.  Over time, these meeting places have been cut off or replaced by unsustainable food supply networks.  While our curreny grocery supply chain is an impressive feat of modern logistics, it places avaibility above any other expense and wastes a large amount of the food we grow.
+      While our current grocery supply chain is an impressive feat of modern logistics, it places avaibility above any other expense and wastes a large amount of the food we grow.
     <figure>
     <a href="https://imgur.com/pDNLKEg"><img src="https://i.imgur.com/pDNLKEg.png" title="food waste" /></a>
     <figcaption style="font-size: smallest;">
@@ -41,19 +52,25 @@
 <br>
 
 <h2> How it's Intended to Grow </h2>
-    <br>
-    <body> At it's core, this project is meant to do two things, collect a list of farmers and land owners and show them the map so they can connect.  First a map, then we can find the way back.  This mockup is intended to convey a fully functioning map module.
-    <a href="https://imgur.com/aNEB4nB"><img src="https://i.imgur.com/aNEB4nB.jpg" title="mockup" style="border: 2px solid #000;">
+<br>
+<br>
+    <body> At it's core, this project is meant to do two things. First organise a club of Ufolks, Ufarmers, and Ufreeholders.  Second, give them the means to connect and self organize.  <b>First a map, so we can find the way back.</b>
+    <a href="https://imgur.com/aNEB4nB"><img src="https://i.imgur.com/aNEB4nB.jpg" title="legacymap" style="border: 2px solid #000;">
     </a>
-
-<h3> Call to action </h3>
+<br>
+<br>
+<h3> Call to Action </h3>
     <br>
-    <p>At this phase we only need your intrest.  Contributing to a healthier food system doesn't need to be hard, it can acutally be kinda fun.  If you're intrested in being included in the beta, drop us a line!</p>
+    <p>Contributing to a healthier food system doesn't need to be hard, it can acutally be kinda fun.  Now accepting users for the pilot group spring 2024</p>
     <br>
 <h2> Get in Touch </h2>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMcVM9-m9wIySnytV_PTfDHVxrya5ecNSrDL7TunFNzehZYw/viewform?embedded=true"> Mailing List </a> 
-    <div class="btn-group open">
-        <a class="btn btn-default" href="https://www.linkedin.com/in/mark-ehler-85052548/"> Linkedin</a>
-        <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
-        <a> <span class="hidden"> m.ehler@comcast.net </span></a>
-    </div>
+<p><b>Join the Beta Group</b></p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMcVM9-m9wIySnytV_PTfDHVxrya5ecNSrDL7TunFNzehZYw/viewform?embedded=true"> Mailing List </a> 
+    <br>
+    <a class="btn btn-default" href="https://www.linkedin.com/in/mark-ehler-85052548/"> Linkedin</a>
+    <br>
+    <a class="btn btn-default" href="https://github.com/MarkEhler"> Github</a>
+    <br>
+    <a href=https://docs.google.com/presentation/d/1bF0ru69BrEYHOdPwkBiLD7mMGAEtza1ch3sJD5EorDU/edit?usp=sharing>Pitch Deck </a>
+    <br>
+    <a> <span class="hidden"> m.ehler@comcast.net </span></a>
