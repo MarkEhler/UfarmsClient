@@ -17,9 +17,10 @@
     "heroku-postbuild": "npm run build",
     "postinstall": "npm run build",
     "serve-heroku": "vite --host 0.0.0.0 --port $PORT preview"
-
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.5.0",
+    "@stripe/stripe-js": "^3.0.5",
     "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
