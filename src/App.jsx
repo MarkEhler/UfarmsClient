@@ -1,29 +1,45 @@
 import { useState } from "react";
 import "./styles.css";
+import axios from "axios";
+// Stripe
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-//Components
+import { CardElement, PaymentElement } from "@stripe/react-stripe-js";
+
+// Components
 import LandingForm from "./components/LandingForm";
 import AnimatedText from "./components/AnimatedText";
 import ModalTemplate from "./components/ModalTemplate";
 import FarmersLandingInfo from "./components/FarmersLandingInfo";
 import HostsLandingInfo from "./components/HostsLandingInfo";
-import CheckoutForm from "./components/CheckoutForm";
 
-const stripePromise = loadStripe("pk_live_6NXWCjCmOLE6JEpUMY7IWPJZ");
-// const stripePromise = loadStripe("sk_test_1FbEXTvPJLpXNqZLLeBAI0gD");
+const stripePromise = loadStripe("pk_test_yerwism8IftZNZFWr962rRam");
 
 export default function App() {
   const [farmersModalOpen, setFarmersModalOpen] = useState(false);
   const [hostsModalOpen, setHostsModalOpen] = useState(false);
 
+  const stripeSecret = async () => {
+    try {
+      //TODO Replace this placeholder url with the real one when it becomes available
+      const secretData = await axios.get("/we-need-this-route", {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      });
+
+      return secretData.data;
+    } catch (err) {
+      //TODO Do some actual error handling?
+      console.error(err);
+    }
+  };
+
   const stripeOptions = {
-    //I (Joseph) don't seem to have this anywhere...
-    clientSecret: "This is my secret, broski",
+    //! The following line causes a break. We need that server route set up.
+    // clientSecret: stripeSecret(),
   };
 
   return (
-    // ...but the client secret key is needed here in order to use Stripe
     <Elements stripe={stripePromise} options={stripeOptions}>
       <div className="text-slate-50 font-bold mx-auto">
         <h1 className="text-6xl mb-24">Ufarms</h1>
@@ -52,7 +68,18 @@ export default function App() {
           </button>
         </div>
 
-        <CheckoutForm />
+        <form
+          className="bg-white p-4 mt-4"
+          action="/create-checkout-session"
+          method="POST"
+        >
+          <CardElement />
+          {/* <PaymentElement /> */}
+
+          <button className="text-black" type="submit">
+            Check Out
+          </button>
+        </form>
 
         {/* Modals */}
         <ModalTemplate
